@@ -1,0 +1,47 @@
+[
+  {
+    "question": "https://www.christies.com/img/LotImages/2016/NYR/2016_NYR_12174_0630_000(jamini_roy_untitled).jpg",
+    "choice1": "Rabindranath Tagore",
+    "choice2": "Hemendranath Mazumdar'",
+    "choice3": "Jamini Roy",
+    "choice4": "Abhanindranath Tagore",
+    "hint": "The artist is best known for his representations of village life, especially \"Santhal\" women.",
+    "answer": 3
+  },
+  {
+    "question": "https://www.artnews.com/wp-content/uploads/2018/06/2cloudgateplp.jpg",
+    "choice1": "Olafur Eliasson",
+    "choice2": "Anish Kapoor",
+    "choice3": "Jeff Koons",
+    "choice4": "David Hockney",
+    "hint": "This artist owns the rights to Vantablack, the blackest black ever made.",
+    "answer": 2
+  },
+  {
+    "question": "img/q3.png",
+    "choice1": "Maqbool Fida Husein",
+    "choice2": "Francis Newton Souza",
+    "choice3": "Syed Haider Raza",
+    "choice4": "Akbar Padamsee",
+    "hint": "The artist was called the 'Picasso of India' by Forbes magazine ",
+    "answer": 1
+  },
+  {
+    "question": "img/q4.png",
+    "choice1": "Louis Bourgeois",
+    "choice2": "Frida Kahlo",
+    "choice3": "Salvador Dali",  
+    "choice4": "Georgia O'Keeffe", 
+    "hint": "The artist had a tumultuous relationship with Mexican muralist, Diego Rivera.",
+    "answer": 2
+  },
+  {
+    "question": "https://news.artnet.com/app/news-upload/2016/05/20160421_VM_Pumpkin_NorikoT_6526-1.jpg",
+    "choice1": "Yayoi Kusama",
+    "choice2": "Takashi Murakami",
+    "choice3": "James Turrell",
+    "choice4": "Jenny Holzer",
+    "hint": "TThe artist suffered from hallucinations even as a child and used art as a coping mechanism.",
+    "answer": 1
+  }
+]
