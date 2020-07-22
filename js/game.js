@@ -1,3 +1,4 @@
+/*eslint-env es6*/
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById("progressText");
@@ -56,7 +57,7 @@ $("#intermediate").click(() => {
 const CORRECT_BONUS = 10;
 let MAX_QUESTIONS = 5;
 
-startGame = () => {
+const startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuesions = [...questions];

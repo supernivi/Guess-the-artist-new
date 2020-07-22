@@ -1,0 +1,24 @@
+{
+  "name": "Guess-the-artist-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supernivi/Guess-the-artist-new.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supernivi/Guess-the-artist-new/issues"
+  },
+  "homepage": "https://github.com/supernivi/Guess-the-artist-new#readme"
+}
