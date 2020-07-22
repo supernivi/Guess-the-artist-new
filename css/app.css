@@ -81,14 +81,18 @@ h3 {
 /* UTILITIES */
 .main-container {
   background: #fff;
-  margin: 10px 39.8%;
+  margin: 10px;
   border: 2px solid #000;
   border-radius: 24px;
   background: url(https://d33wubrfki0l68.cloudfront.net/a22eae9b9425d865a7ff6e5fba4d675c217cb000/bg.jpg);
   min-height: 97.5vh;
   background-size: 160vh;
   align-items: center;
+  min-width: 400px;
+  max-width: 400px;
 }
+
+
 
 .container {
   /* width: 100vw; */
@@ -190,5 +194,11 @@ input::placeholder {
   }
   .container{
     min-height: 77.5vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-container{
+    min-width: 95%;
   }
 }

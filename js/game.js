@@ -18,7 +18,9 @@ let questions = [];
 
 $("#game").hide();
 $("#end").hide();
+$("#game-hard").hide();
 
+// Easy level - method
 $("#easy").click(() => {
   $("#home").hide();
   $("#game").show();
@@ -36,9 +38,28 @@ $("#easy").click(() => {
     });
 })
 
+// Intermediate level - method
 $("#intermediate").click(() => {
   $("#home").hide();
   $("#game").show();
+  fetch("./js/intermediate.json")
+    .then(res => {
+      return res.json();
+    })
+    .then(loadedQuestions => {
+      questions = loadedQuestions;
+
+      startGame();
+    })
+    .catch(err => {
+      console.error(err);
+    });
+})
+
+// Hard level - method
+$("#hard").click(() => {
+  $("#home").hide();
+  $("#game-hard").show();
   fetch("./js/intermediate.json")
     .then(res => {
       return res.json();
@@ -64,6 +85,7 @@ const startGame = () => {
   getNewQuestion();
 };
 
+// New Question?
 getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter === MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);

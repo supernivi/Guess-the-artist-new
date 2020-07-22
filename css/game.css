@@ -2,6 +2,8 @@ body{
   min-height: 70vh;
   background: #fbdd56;
   box-sizing: border-box!important;
+  display: flex;
+  justify-content: center;
 }
 
 #question {
