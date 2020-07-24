@@ -29,7 +29,8 @@ let currentScore = 0;
 const image = $("#question-hard");
 const input = $("#answer-input");
 const displayQuestionNumber = $("#question-number");
-
+const resultTextHard = document.getElementById("result-hard");
+const finalScoreHard = document.getElementById("finalScore-hard");
 
 // Easy level - method
 $("#easy").click(() => {
@@ -89,41 +90,99 @@ $("#hard").click(() => {
     });
 });
 
-
 //
 // Hard Mode ***
 //
 const hardModeStart = () => {
   $("#answer-button").click((e) => {
     e.preventDefault();
-    endQuestion = questions.length-1;
-    if(input.val()){if (endQuestion >= questionNumber) {
-      // Before changing question
-      console.log(questionNumber);
-      console.log(questions[questionNumber].img);
-      console.log(questions[questionNumber].answer);
-      console.log(input.val().toLowerCase().trim());
-      if(input.val().toLowerCase().trim()===questions[questionNumber].answer.toLowerCase()){
-        score++
-        console.log('score',score);
-        input.val(null);
-      }else{
-        console.log('score',score);
-        input.val(null);
+    endQuestion = questions.length - 1;
+    if (input.val()) {
+      if (endQuestion >= questionNumber) {
+        // Logs
+        console.log(questionNumber);
+        console.log(questions[questionNumber].img);
+        console.log(questions[questionNumber].answer);
+        console.log(input.val().toLowerCase().trim());
+
+        // Before changing question
+        if (
+          input
+            .val()
+            .replace(/[^a-z0-9\s]/gi, "")
+            .replace(/[_\s]/g, "")
+            .toLowerCase() ===
+          questions[questionNumber].answer
+            .replace(/[^a-z0-9\s]/gi, "")
+            .replace(/[_\s]/g, "")
+            .toLowerCase()
+        ) {
+          score++;
+          console.log("score", score);
+          input.val(null);
+        } else {
+          console.log("score", score);
+          input.val(null);
+        }
+        displayQuestionNumber.text(questionNumber);
+        image.attr("src", questions[questionNumber].img);
+        questionNumber++;
+      } else {
+        calculateHardScore();
+        putResult();
+        $("#game-hard").hide();
+        $("#end-hard").show();
       }
-      displayQuestionNumber.text(questionNumber);
-      image.attr('src',questions[questionNumber].img);
-      questionNumber++;
-      // After changing question
-      console.log(questionNumber);
-    }else{
-      $("#game-hard").hide();
-      $("#end-hard").show();
-    }}else{
+    } else {
       window.alert("Input cannot be null");
     }
   });
 };
+
+function calculateHardScore() {
+  if (
+    input
+      .val()
+      .replace(/[^a-z0-9\s]/gi, "")
+      .replace(/[_\s]/g, "")
+      .toLowerCase() ===
+    questions[4].answer
+      .replace(/[^a-z0-9\s]/gi, "")
+      .replace(/[_\s]/g, "")
+      .toLowerCase()
+  ) {
+    score++;
+    console.log("score", score);
+    input.val(null);
+  } else {
+    console.log("score", score);
+    input.val(null);
+  }
+}
+
+function putResult() {
+  if (score == 5) {
+    resultTextHard.innerText = "Perfect score!";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+  } else if (score == 4) {
+    resultTextHard.innerText = "Awesome job, you got most of them right.";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+  } else if (score == 3) {
+    resultTextHard.innerText = "Pretty good, we'll say that's a pass.";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+  } else if (score == 2) {
+    resultTextHard.innerText = "Well, at least you got some of them right!";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+  } else if (score == 1) {
+    resultTextHard.innerText =
+      "Looks like this was a tough one, better luck next time.";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+  } else {
+    resultTextHard.innerText =
+      "Yikes, none correct. Well, maybe it was rigged?";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+  }
+}
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
@@ -149,10 +208,10 @@ getNewQuestion = () => {
 
   const questionIndex = Math.floor(Math.random() * availableQuesions.length);
   currentQuestion = availableQuesions[questionIndex];
-  
+
   console.log(question.src);
   console.log(currentQuestion.question);
-  
+
   question.src = currentQuestion.question;
   hint.innerText = currentQuestion.hint;
   setTimeout(() => {

@@ -14,5 +14,9 @@
   {
     "img": "./img/new/4.png",
     "answer": "artistA"
+  },
+  {
+    "img": "./img/new/5.png",
+    "answer": "artistA"
   }
 ]
