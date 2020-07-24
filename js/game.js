@@ -26,36 +26,36 @@ $("#easy").click(() => {
   $("#home").hide();
   $("#game").show();
   fetch("./js/easy.json")
-    .then(res => {
+    .then((res) => {
       return res.json();
     })
-    .then(loadedQuestions => {
+    .then((loadedQuestions) => {
       questions = loadedQuestions;
 
       startGame();
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
     });
-})
+});
 
 // Intermediate level - method
 $("#intermediate").click(() => {
   $("#home").hide();
   $("#game").show();
   fetch("./js/intermediate.json")
-    .then(res => {
+    .then((res) => {
       return res.json();
     })
-    .then(loadedQuestions => {
+    .then((loadedQuestions) => {
       questions = loadedQuestions;
 
       startGame();
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
     });
-})
+});
 
 // Hard level - method
 $("#hard").click(() => {
@@ -64,29 +64,40 @@ $("#hard").click(() => {
   $("#game-hard").show();
   $("body").addClass("body-color");
   fetch("./js/hard.json")
-    .then(res => {
+    .then((res) => {
       return res.json();
     })
-    .then(loadedQuestions => {
+    .then((loadedQuestions) => {
       console.log(loadedQuestions);
       questions = loadedQuestions;
       hardModeStart();
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
     });
-})
-
+});
 
 // Hard Mode
+let endQuestion = 0;
+let questionNumber = 0;
+let currentScore = 0;
+const image = $("#question");
+const input = $("answer-input");
+const displayQuestionNumber = $("#question-number");
 
-const hardModeStart=()=>{
-
-}
-
-
-
-
+const hardModeStart = () => {
+  $("#answer-button").click((e) => {
+    e.preventDefault();
+    endQuestion = questions.length;
+    if (endQuestion > questionNumber) {
+      questionNumber++;
+      displayQuestionNumber.text(questionNumber);
+    }else{
+      $("#game-hard").hide();
+      $("#end").show();
+    }
+  });
+};
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
@@ -115,18 +126,19 @@ getNewQuestion = () => {
   question.src = currentQuestion.question;
   hint.innerText = currentQuestion.hint;
   setTimeout(() => {
-    choices.forEach(choice => {
+    choices.forEach((choice) => {
       const number = choice.dataset["number"];
       choice.innerText = currentQuestion["choice" + number];
-    }), 500
+    }),
+      500;
   });
 
   availableQuesions.splice(questionIndex, 1);
   acceptingAnswers = true;
 };
 
-choices.forEach(choice => {
-  choice.addEventListener("click", e => {
+choices.forEach((choice) => {
+  choice.addEventListener("click", (e) => {
     if (!acceptingAnswers) return;
 
     acceptingAnswers = false;
@@ -140,8 +152,7 @@ choices.forEach(choice => {
     if (classToApply === "correct") {
       incrementScore(CORRECT_BONUS);
       selectedChoice.parentElement.classList.add(classToApply);
-    }
-    else {
+    } else {
       incrementScore(0);
       selectedChoice.parentElement.classList.add(classToApply);
       correctAnswer.parentElement.classList.add("correct");
@@ -155,31 +166,27 @@ choices.forEach(choice => {
   });
 });
 
-incrementScore = num => {
+incrementScore = (num) => {
   score += num;
   scoreText.innerText = score;
 
   if (score == 50) {
     resultText.innerText = "Perfect score!";
     finalScore.innerText = `You Scored : ${score}/50`;
-  }
-  else if (score == 40) {
+  } else if (score == 40) {
     resultText.innerText = "Awesome job, you got most of them right.";
     finalScore.innerText = `You Scored : ${score}/50`;
-  }
-  else if (score == 30) {
+  } else if (score == 30) {
     resultText.innerText = "Pretty good, we'll say that's a pass.";
     finalScore.innerText = `You Scored : ${score}/50`;
-  }
-  else if (score == 20) {
+  } else if (score == 20) {
     resultText.innerText = "Well, at least you got some of them right!";
     finalScore.innerText = `You Scored : ${score}/50`;
-  }
-  else if (score == 10) {
-    resultText.innerText = "Looks like this was a tough one, better luck next time.";
+  } else if (score == 10) {
+    resultText.innerText =
+      "Looks like this was a tough one, better luck next time.";
     finalScore.innerText = `You Scored : ${score}/50`;
-  }
-  else {
+  } else {
     resultText.innerText = "Yikes, none correct. Well, maybe it was rigged?";
     finalScore.innerText = `You Scored : ${score}/50`;
   }
