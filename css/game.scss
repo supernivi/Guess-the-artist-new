@@ -84,8 +84,9 @@ body {
   width: 0%;
 }
 
+// -------------------//
 /* HARD MODE @suraj */
-
+// ------------------//
 #game-hard * {
   transition: all 250ms linear;
 }
@@ -145,8 +146,20 @@ body {
   }
 }
 
-#question.hard-img {
-  height: 100%;
+#end-hard.end-hard{
+  justify-content: center;
+  align-items: center;
+  #social-text{
+    max-width: 400px;
+  }
+}
+
+#question-hard.hard-img {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  margin-top: -36px;
+  margin-bottom: 20px;
   object-fit: contain;
   border-radius: 12px;
   // box-shadow: 4px 4px 16px #00000033;

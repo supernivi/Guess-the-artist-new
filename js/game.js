@@ -19,14 +19,15 @@ let questions = [];
 $("#game").hide();
 $("#end").hide();
 $("#game-hard").hide();
+$("#end-hard").hide();
 $("body").removeClass("body-color");
 
 // Hard Mode values
 let endQuestion = 0;
 let questionNumber = 1;
 let currentScore = 0;
-const image = $("#question");
-const input = $("answer-input");
+const image = $("#question-hard");
+const input = $("#answer-input");
 const displayQuestionNumber = $("#question-number");
 
 
@@ -58,7 +59,7 @@ $("#intermediate").click(() => {
     })
     .then((loadedQuestions) => {
       questions = loadedQuestions;
-
+      console.log(loadedQuestions);
       startGame();
     })
     .catch((err) => {
@@ -74,6 +75,7 @@ $("#hard").click(() => {
   $("body").addClass("body-color");
   fetch("./js/hard.json")
     .then((res) => {
+      console.log("hard mode fetch");
       return res.json();
     })
     .then((loadedQuestions) => {
@@ -87,24 +89,38 @@ $("#hard").click(() => {
     });
 });
 
-// Hard Mode
 
+//
+// Hard Mode ***
+//
 const hardModeStart = () => {
   $("#answer-button").click((e) => {
     e.preventDefault();
     endQuestion = questions.length-1;
-    if (endQuestion >= questionNumber) {
+    if(input.val()){if (endQuestion >= questionNumber) {
       // Before changing question
       console.log(questionNumber);
-      displayQuestionNumber.text(questionNumber);
       console.log(questions[questionNumber].img);
+      console.log(questions[questionNumber].answer);
+      console.log(input.val().toLowerCase().trim());
+      if(input.val().toLowerCase().trim()===questions[questionNumber].answer.toLowerCase()){
+        score++
+        console.log('score',score);
+        input.val(null);
+      }else{
+        console.log('score',score);
+        input.val(null);
+      }
+      displayQuestionNumber.text(questionNumber);
       image.attr('src',questions[questionNumber].img);
       questionNumber++;
       // After changing question
       console.log(questionNumber);
     }else{
       $("#game-hard").hide();
-      $("#end").show();
+      $("#end-hard").show();
+    }}else{
+      window.alert("Input cannot be null");
     }
   });
 };
@@ -133,6 +149,10 @@ getNewQuestion = () => {
 
   const questionIndex = Math.floor(Math.random() * availableQuesions.length);
   currentQuestion = availableQuesions[questionIndex];
+  
+  console.log(question.src);
+  console.log(currentQuestion.question);
+  
   question.src = currentQuestion.question;
   hint.innerText = currentQuestion.hint;
   setTimeout(() => {

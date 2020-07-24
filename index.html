@@ -15,7 +15,7 @@
 
 
   <!-- Hard Mode -->
-  <div id="game-hard" class="justify-center flex-column">
+  <div id="game-hard" class="game-hard flex-column">
     <div id="hud2">
       <div id="hud-item">
         <p class="hud-prefix">
@@ -24,11 +24,31 @@
       </div>
     </div>
     <div id="answer">
-      <img src="./img/new/1_long.png" alt="" class="hard-img" id="question">
+      <img src="./img/new/1_long.png" alt="" class="hard-img" id="question-hard">
       <form id="answer-form" class="answer-form">
         <input type="text" id="answer-input" class="answer-input">
         <button id="answer-button" class="answer-button">SUBMIT</button>
       </form>
+    </div>
+  </div>
+
+  <div id="end-hard" class="end-hard flex-column">
+    <img src="img/af.png" alt="Logo" class="logo">
+    <h3 id="result" style="text-align: center; font-size: 24px;"></h3>
+    <h3 id="finalScore" style="font-size: 20px; font-weight: bold; margin-top: 10px; margin-bottom: 140px;"></h3>
+    <a class="btn" href="/index.html">Play Again</a>
+    <a class="btn" href="https://www.artfervour.com/which-artist-are-you">Which Artist are You?</a>
+    <a class="btn" href="https://www.artfervour.com/af-games">Play More Games</a>
+    <div class="results-social">
+      <div id="social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!
+      </div>
+      <div class="icon-container">
+        <a href="whatsapp://send?text=https://guesstheartist.artfervour.com/"><img src="/whatsapp.png"
+            style="height: 34px; width: 34px; display: inline-block; margin-top: 0px; margin-right: 24px;" alt=""></a><a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://guesstheartist.artfervour.com/"><img
+            src="/fb-logo-black-circle.png" style="height: 32px; width: 32px; display: inline-block; margin-top: 0px"
+            alt=""></a>
+      </div>
     </div>
   </div>
 

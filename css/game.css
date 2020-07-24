@@ -165,8 +165,27 @@ body {
   background: #ffffff;
 }
 
-#question.hard-img {
-  height: 100%;
+#end-hard.end-hard {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#end-hard.end-hard #social-text {
+  max-width: 400px;
+}
+
+#question-hard.hard-img {
+  width: 100%;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -36px;
+  margin-bottom: 20px;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 12px;
