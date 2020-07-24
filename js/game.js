@@ -19,6 +19,7 @@ let questions = [];
 $("#game").hide();
 $("#end").hide();
 $("#game-hard").hide();
+$("body").removeClass("body-color");
 
 // Easy level - method
 $("#easy").click(() => {
@@ -58,21 +59,34 @@ $("#intermediate").click(() => {
 
 // Hard level - method
 $("#hard").click(() => {
+  $("#main").hide();
   $("#home").hide();
   $("#game-hard").show();
-  fetch("./js/intermediate.json")
+  $("body").addClass("body-color");
+  fetch("./js/hard.json")
     .then(res => {
       return res.json();
     })
     .then(loadedQuestions => {
+      console.log(loadedQuestions);
       questions = loadedQuestions;
-
-      startGame();
+      hardModeStart();
     })
     .catch(err => {
       console.error(err);
     });
 })
+
+
+// Hard Mode
+
+const hardModeStart=()=>{
+
+}
+
+
+
+
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
