@@ -21,6 +21,15 @@ $("#end").hide();
 $("#game-hard").hide();
 $("body").removeClass("body-color");
 
+// Hard Mode values
+let endQuestion = 0;
+let questionNumber = 1;
+let currentScore = 0;
+const image = $("#question");
+const input = $("answer-input");
+const displayQuestionNumber = $("#question-number");
+
+
 // Easy level - method
 $("#easy").click(() => {
   $("#home").hide();
@@ -70,6 +79,7 @@ $("#hard").click(() => {
     .then((loadedQuestions) => {
       console.log(loadedQuestions);
       questions = loadedQuestions;
+      displayQuestionNumber.text(questionNumber);
       hardModeStart();
     })
     .catch((err) => {
@@ -78,20 +88,20 @@ $("#hard").click(() => {
 });
 
 // Hard Mode
-let endQuestion = 0;
-let questionNumber = 0;
-let currentScore = 0;
-const image = $("#question");
-const input = $("answer-input");
-const displayQuestionNumber = $("#question-number");
 
 const hardModeStart = () => {
   $("#answer-button").click((e) => {
     e.preventDefault();
-    endQuestion = questions.length;
-    if (endQuestion > questionNumber) {
-      questionNumber++;
+    endQuestion = questions.length-1;
+    if (endQuestion >= questionNumber) {
+      // Before changing question
+      console.log(questionNumber);
       displayQuestionNumber.text(questionNumber);
+      console.log(questions[questionNumber].img);
+      image.attr('src',questions[questionNumber].img);
+      questionNumber++;
+      // After changing question
+      console.log(questionNumber);
     }else{
       $("#game-hard").hide();
       $("#end").show();
