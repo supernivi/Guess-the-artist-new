@@ -194,4 +194,8 @@ body {
 .body-color {
   background-color: #f0db5e;
 }
+
+.body-bg-end {
+  background: url("./../img/new/bg_end.jpeg");
+}
 /*# sourceMappingURL=game.css.map */

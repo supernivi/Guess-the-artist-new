@@ -21,6 +21,7 @@ $("#end").hide();
 $("#game-hard").hide();
 $("#end-hard").hide();
 $("body").removeClass("body-color");
+$("body").removeClass("body-bg-end");
 
 // Hard Mode values
 let endQuestion = 0;
@@ -131,6 +132,7 @@ const hardModeStart = () => {
         calculateHardScore();
         putResult();
         $("#game-hard").hide();
+        $("body").addClass("body-bg-end");
         $("#end-hard").show();
       }
     } else {
