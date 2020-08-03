@@ -196,6 +196,8 @@ body {
 }
 
 .body-bg-end {
+  min-height: 100vh;
+  backdrop-filter: blur(2px) contrast(0.92);
   background: url("./../img/new/bg_end.jpeg");
 }
 /*# sourceMappingURL=game.css.map */

@@ -92,8 +92,6 @@ h3 {
   max-width: 400px;
 }
 
-
-
 .container {
   /* width: 100vw; */
   min-height: 80vh;
@@ -183,8 +181,37 @@ input::placeholder {
   color: #aaa;
 }
 
-@media (max-width: 900px){
-  body{
+/* Custom @suraj */
+
+#finalScore-hard{
+  margin-top: 1rem !important;
+  margin-bottom: 6rem !important;
+}
+
+.btn-end-hard {
+  border-radius: 0;
+  padding: 1rem 0;
+  margin-bottom: 1.4rem;
+  /* padding: 0.4rem 2rem; */
+  box-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000,
+    5px 5px 0 #000, 6px 6px 0 #000, 7px 7px 0 #000, 8px 8px 0 #000 !important;
+}
+
+.btn-end-hard:hover{
+  background-color: #f8f8f8;
+  box-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000,
+    5px 5px 0 #000, 6px 6px 0 #000, 7px 7px 0 #000, 8px 8px 0 #000 !important;
+}
+
+.results-social{
+  padding: 2rem;
+  padding-top: 4rem;
+}
+
+/* end @suraj */
+
+@media (max-width: 900px) {
+  body {
     min-height: 80vh;
   }
   .main-container {
@@ -192,13 +219,13 @@ input::placeholder {
     width: 95%;
     min-height: 77.5vh;
   }
-  .container{
+  .container {
     min-height: 77.5vh;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .main-container{
+  .main-container {
     min-width: 95%;
   }
 }
