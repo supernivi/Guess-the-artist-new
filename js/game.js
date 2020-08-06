@@ -177,11 +177,11 @@ function putResult() {
     finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
   } else if (score == 1) {
     resultTextHard.innerText =
-      "Looks like this was a tough one, better luck next time.";
+      "Looks like this was a tough one,\n better luck next time.";
     finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
   } else {
     resultTextHard.innerText =
-      "Yikes, none correct. Well, maybe it was rigged?";
+      "Yikes, none correct. Well,\n maybe it was rigged?";
     finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
   }
 }
