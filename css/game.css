@@ -196,8 +196,18 @@ body {
 }
 
 .body-bg-end {
-  min-height: 100vh;
-  backdrop-filter: blur(2px) contrast(0.92);
-  background: url("./../img/new/bg_end.jpeg");
+  background-color: #fff;
+}
+
+.body-bg-end::before {
+  content: "";
+  background-image: url("./../img/new/bg_end_2.jpeg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
 }
 /*# sourceMappingURL=game.css.map */

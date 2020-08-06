@@ -169,6 +169,18 @@ body {
   background-color: #f0db5e;
 }
 
-.body-bg-end {
-  background: url('./../img/new/bg_end.jpeg');
+.body-bg-end{
+  background-color: #fff;
+}
+
+.body-bg-end::before {    
+  content: "";
+  background-image: url('./../img/new/bg_end_2.jpeg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
 }
