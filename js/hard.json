@@ -1,0 +1,22 @@
+[
+  {
+    "img": "./img/new/1_long.png",
+    "answer": "Andy Warhol"
+  },
+  {
+    "img": "./img/new/2_long.png",
+    "answer": "Frida Kahlo"
+  },
+  {
+    "img": "./img/new/3_long.png",
+    "answer": "Leonardo da Vinci"
+  },
+  {
+    "img": "./img/new/4_long.png",
+    "answer": "Georgia O'Keeffe"
+  },
+  {
+    "img": "./img/new/5_long.png",
+    "answer": "Marcel Duchamp"
+  }
+]

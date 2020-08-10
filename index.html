@@ -1,24 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Guess The Artist</title>
-    <link rel="stylesheet" href="./css/app.css" />
-    <link rel="stylesheet" href="./css/game.css" />
-    <script src="./js/game.js" defer></script>
-  </head>
-  <body>
 
-    <div class="main-container">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Guess The Artist</title>
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="./css/game.css" />
+  <script src="./js/game.js" defer></script>
+</head>
+
+<body>
+
+
+  <!-- Hard Mode -->
+  <div id="game-hard" class="game-hard flex-column">
+    <div id="hud2">
+      <div id="hud-item">
+        <p class="hud-prefix">
+          Artist: <span class="hud-main-text" id="question-number">0</span>/5
+        </p>
+      </div>
+    </div>
+    <div id="answer">
+      <img src="./img/new/1_long.png" alt="" class="hard-img" id="question-hard">
+      <form id="answer-form" class="answer-form">
+        <input type="text" id="answer-input" class="answer-input">
+        <button id="answer-button" class="answer-button">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="end-hard" class="end-hard flex-column">
+    <img src="img/af.png" alt="Logo" class="logo">
+    <h3 id="result-hard" style="text-align: center; font-size: 24px;"></h3>
+    <h3 id="finalScore-hard" style="font-size: 20px; font-weight: bold; margin-top: 10px; margin-bottom: 140px;"></h3>
+    <a class="btn btn-end-hard" href="/index.html">Play Again</a>
+    <a class="btn btn-end-hard" href="https://www.artfervour.com/which-artist-are-you">Which Artist are You?</a>
+    <a class="btn btn-end-hard" href="https://www.artfervour.com/af-games">Play More Games</a>
+    <a class="btn btn-end-hard" href="https://www.artfervour.com">Return Home</a>
+    <div class="results-social">
+      <div id="social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!
+      </div>
+      <div class="icon-container">
+        <a href="whatsapp://send?text=https://guesstheartist.artfervour.com/"><img src="/whatsapp.png"
+            style="height: 34px; width: 34px; display: inline-block; margin-top: 0px; margin-right: 24px;" alt=""></a><a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://guesstheartist.artfervour.com/"><img
+            src="/fb-logo-black-circle.png" style="height: 32px; width: 32px; display: inline-block; margin-top: 0px"
+            alt=""></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="main" class="main-container">
     <img src="img/af.png" alt="Logo" class="logo">
     <div class="container">
 
       <div id="home" class="flex-center flex-column">
-        <h2 style="text-align: center; font-size: 16px; font-weight: 700; margin-top: 120px; margin-bottom: 20px;">Choose Difficulty Level</h2>
+        <h2 style="text-align: center; font-size: 16px; font-weight: 700; margin-top: 120px; margin-bottom: 20px;">
+          Choose Difficulty Level</h2>
         <a class="btn" id="easy">Easy</a>
         <a class="btn" id="intermediate">Intermediate</a>
+        <a class="btn" id="hard">Hard</a>
       </div>
 
       <div id="game" class="justify-center flex-column">
@@ -55,27 +100,31 @@
         </div>
       </div>
 
+      <!-- END section -->
       <div id="end" class="flex-center flex-column">
         <h3 id="result" style="text-align: center; font-size: 24px;"></h3>
         <h3 id="finalScore" style="font-size: 20px; font-weight: bold; margin-top: 10px; margin-bottom: 140px;"></h3>
         <a class="btn" href="/index.html">Play Again</a>
         <a class="btn" href="https://www.artfervour.com/which-artist-are-you">Which Artist are You?</a>
         <a class="btn" href="https://www.artfervour.com/af-games">Play More Games</a>
+        <a class="btn" href="https://www.artfervour.com">Return Home</a>
         <div class="results-social">
           <div id="social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!
           </div>
           <div class="icon-container">
             <a href="whatsapp://send?text=https://guesstheartist.artfervour.com/"><img src="/whatsapp.png"
-              style="height: 34px; width: 34px; display: inline-block; margin-top: 0px; margin-right: 24px;" alt=""></a><a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://guesstheartist.artfervour.com/"><img
-              src="/fb-logo-black-circle.png" style="height: 32px; width: 32px; display: inline-block; margin-top: 0px"
-              alt=""></a>
+                style="height: 34px; width: 34px; display: inline-block; margin-top: 0px; margin-right: 24px;"
+                alt=""></a><a
+              href="https://www.facebook.com/sharer/sharer.php?u=https://guesstheartist.artfervour.com/"><img
+                src="/fb-logo-black-circle.png"
+                style="height: 32px; width: 32px; display: inline-block; margin-top: 0px" alt=""></a>
           </div>
         </div>
       </div>
 
     </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  </body>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+</body>
+
 </html>
