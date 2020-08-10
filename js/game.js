@@ -125,7 +125,7 @@ const hardModeStart = () => {
           console.log("score", score);
           input.val(null);
         }
-        displayQuestionNumber.text(questionNumber);
+        displayQuestionNumber.text(questionNumber+1);
         image.attr("src", questions[questionNumber].img);
         questionNumber++;
       } else {
