@@ -37,7 +37,7 @@ const finalScoreHard = document.getElementById("finalScore-hard");
 $("#easy").click(() => {
   $("#home").hide();
   $("#game").show();
-  fetch("./js/easy.json")
+  fetch("js/easy.json")
     .then((res) => {
       return res.json();
     })
@@ -101,9 +101,9 @@ const hardModeStart = () => {
     if (input.val()) {
       if (endQuestion >= questionNumber) {
         // Logs
-        console.log(questionNumber);
-        console.log(questions[questionNumber].img);
-        console.log(questions[questionNumber].answer);
+        console.log(questionNumber-1);
+        console.log(questions[questionNumber-1].img);
+        console.log(questions[questionNumber-1].answer);
         console.log(input.val().toLowerCase().trim());
 
         // Before changing question
@@ -113,7 +113,7 @@ const hardModeStart = () => {
             .replace(/[^a-z0-9\s]/gi, "")
             .replace(/[_\s]/g, "")
             .toLowerCase() ===
-          questions[questionNumber].answer
+          questions[questionNumber - 1].answer
             .replace(/[^a-z0-9\s]/gi, "")
             .replace(/[_\s]/g, "")
             .toLowerCase()
@@ -142,13 +142,22 @@ const hardModeStart = () => {
 };
 
 function calculateHardScore() {
+  console.log(input
+      .val()
+      .replace(/[^a-z0-9\s]/gi, "")
+      .replace(/[_\s]/g, "")
+      .toLowerCase() ===
+    questions[questions.length - 1].answer
+      .replace(/[^a-z0-9\s]/gi, "")
+      .replace(/[_\s]/g, "")
+      .toLowerCase())
   if (
     input
       .val()
       .replace(/[^a-z0-9\s]/gi, "")
       .replace(/[_\s]/g, "")
       .toLowerCase() ===
-    questions[4].answer
+    questions[questions.length - 1].answer
       .replace(/[^a-z0-9\s]/gi, "")
       .replace(/[_\s]/g, "")
       .toLowerCase()
@@ -163,26 +172,26 @@ function calculateHardScore() {
 }
 
 function putResult() {
-  if (score == 5) {
+  if (score == 4) {
     resultTextHard.innerText = "Perfect score!";
-    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
-  } else if (score == 4) {
-    resultTextHard.innerText = "Awesome job, you got most of them right.";
-    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+    finalScoreHard.innerText = `You Scored : ${score * 10}/40`;
   } else if (score == 3) {
-    resultTextHard.innerText = "Pretty good, we'll say that's a pass.";
-    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+    resultTextHard.innerText = "Awesome job, you got most of them right.";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/40`;
   } else if (score == 2) {
+    resultTextHard.innerText = "Pretty good, we'll say that's a pass.";
+    finalScoreHard.innerText = `You Scored : ${score * 10}/40`;
+  } /*else if (score == 2) {
     resultTextHard.innerText = "Well, at least you got some of them right!";
-    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
-  } else if (score == 1) {
+    finalScoreHard.innerText = `You Scored : ${score * 10}/40`;
+  } */else if (score == 1) {
     resultTextHard.innerText =
       "Looks like this was a tough one,\n better luck next time.";
-    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+    finalScoreHard.innerText = `You Scored : ${score * 10}/40`;
   } else {
     resultTextHard.innerText =
       "Yikes, none correct. Well,\n maybe it was rigged?";
-    finalScoreHard.innerText = `You Scored : ${score * 10}/50`;
+    finalScoreHard.innerText = `You Scored : ${score * 10}/40`;
   }
 }
 

@@ -1,22 +1,18 @@
 [
   {
     "img": "./img/new/1_long.png",
-    "answer": "Andy Warhol"
+    "answer": "Marcel Duchamp"
   },
   {
     "img": "./img/new/2_long.png",
-    "answer": "Frida Kahlo"
+    "answer": "Sayed Haider Raza"
   },
   {
     "img": "./img/new/3_long.png",
-    "answer": "Leonardo da Vinci"
+    "answer": "Edward Hopper"
   },
   {
     "img": "./img/new/4_long.png",
-    "answer": "Georgia O'Keeffe"
-  },
-  {
-    "img": "./img/new/5_long.png",
-    "answer": "Marcel Duchamp"
+    "answer": "Edgar Degas"
   }
 ]

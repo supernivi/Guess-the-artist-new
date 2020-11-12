@@ -1,47 +1,47 @@
 [
   {
     "question": "./img/easy_q1.jpg",
-    "choice1": "Rabindranath Tagore",
-    "choice2": "Hemendranath Mazumdar'",
-    "choice3": "Jamini Roy",
-    "choice4": "Abhanindranath Tagore",
-    "hint": "The artist is best known for his representations of village life, especially \"Santhal\" women.",
-    "answer": 3
+    "choice1": "Rembrandt",
+    "choice2": "Caravaggio",
+    "choice3": "Johannes Vermeer",
+    "choice4": "Peter Paul Rubens",
+    "hint": "This artist was commissioned by the civic militia to create ‘The Night Watch’.",
+    "answer": 1
   },
   {
     "question": "./img/easy_q2.jpg",
-    "choice1": "Olafur Eliasson",
-    "choice2": "Anish Kapoor",
-    "choice3": "Jeff Koons",
-    "choice4": "David Hockney",
-    "hint": "This artist owns the rights to Vantablack, the blackest black ever made.",
-    "answer": 2
+    "choice1": "Camille Pissaro",
+    "choice2": "Georgia O'Keeffe",
+    "choice3": "Mary Cassatt",
+    "choice4": "Berthe Morisot",
+    "hint": "This artist was deeply inspired by Edgar Degas’ work and was one of the first women to exhibit her work at the Paris Salon.",
+    "answer": 3
   },
   {
     "question": "./img/easy_q3.jpg",
-    "choice1": "Yayoi Kusama",
-    "choice2": "Takashi Murakami",
-    "choice3": "James Turrell",
-    "choice4": "Jenny Holzer",
-    "hint": "TThe artist suffered from hallucinations even as a child and used art as a coping mechanism.",
+    "choice1": "Cindy Sherman",
+    "choice2": "Barbara Kruger",
+    "choice3": "Richard Prince",
+    "choice4": "Man Ray",
+    "hint": "This artist is most famous for ‘The Untitled Series’, a series of photographs reminiscent of the Italian neorealism or American film noir.",
     "answer": 1
   },
   {
     "question": "./img/easy_q4.jpg",
-    "choice1": "Maqbool Fida Husein",
-    "choice2": "Francis Newton Souza",
-    "choice3": "Syed Haider Raza",
-    "choice4": "Akbar Padamsee",
-    "hint": "The artist was called the 'Picasso of India' by Forbes magazine ",
-    "answer": 1
+    "choice1": "Takashi Murakami",
+    "choice2": "Jeff Koons",
+    "choice3": "Andy Warhol",
+    "choice4": "Damien Hirst",
+    "hint": "This artist is famous for making stainless steel sculptures of balloon animals.",
+    "answer": 2
   },
   {
     "question": "./img/easy_q5.jpg",
-    "choice1": "Louis Bourgeois",
-    "choice2": "Frida Kahlo",
-    "choice3": "Salvador Dali",  
-    "choice4": "Georgia O'Keeffe", 
-    "hint": "The artist had a tumultuous relationship with Mexican muralist, Diego Rivera.",
-    "answer": 2
+    "choice1": "Raphael",
+    "choice2": "Vincent van Gogh",
+    "choice3": "Claude Monet",
+    "choice4": "Leonardo da Vinci", 
+    "hint": "This artist has created the most famous portrait ever made.",
+    "answer": 4
   }
 ]
