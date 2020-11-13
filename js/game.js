@@ -22,6 +22,7 @@ $("#game-hard").hide();
 $("#end-hard").hide();
 $("body").removeClass("body-color");
 $("body").removeClass("body-bg-end");
+let bg_colour = $("body").css("background-color")
 
 // Hard Mode values
 let endQuestion = 0;
@@ -53,6 +54,7 @@ $("#easy").click(() => {
 
 // Intermediate level - method
 $("#intermediate").click(() => {
+  $("body").css("background-color", "#f58427")
   $("#home").hide();
   $("#game").show();
   fetch("./js/intermediate.json")
@@ -75,6 +77,7 @@ $("#hard").click(() => {
   $("#home").hide();
   $("#game-hard").show();
   $("body").addClass("body-color");
+  $("body").css("background-color", "#EC7354")
   fetch("./js/hard.json")
     .then((res) => {
       console.log("hard mode fetch");
@@ -129,6 +132,7 @@ const hardModeStart = () => {
         image.attr("src", questions[questionNumber].img);
         questionNumber++;
       } else {
+        $("body").css("background-color", bg_colour)
         calculateHardScore();
         putResult();
         $("#game-hard").hide();
@@ -210,6 +214,7 @@ const startGame = () => {
 getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter === MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
+    $("body").css("background-color", bg_colour)
     $("#game").hide();
     $("#end").show();
   }
